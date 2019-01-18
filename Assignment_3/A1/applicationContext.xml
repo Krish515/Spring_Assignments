@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans  
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans   
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">  
+
+<bean id="S001" class="com.assignment3.Student">
+<constructor-arg value="S001"></constructor-arg>
+<constructor-arg value="Ray"></constructor-arg>
+<constructor-arg value="New York"></constructor-arg>
+</bean>
+<bean id="S002" class="com.assignment3.Student">
+<constructor-arg value="S002"></constructor-arg>
+<constructor-arg value="Peter"></constructor-arg>
+<constructor-arg value="Chicago"></constructor-arg>
+</bean>
+<bean id="S003" class="com.assignment3.Student">
+<constructor-arg value="S003"></constructor-arg>
+<constructor-arg value="Stark"></constructor-arg>
+<constructor-arg value="California"></constructor-arg>
+</bean>
+<bean id="S004" class="com.assignment3.Student">
+<constructor-arg value="S004"></constructor-arg>
+<constructor-arg value="Steve"></constructor-arg>
+<constructor-arg value="Brooklyn"></constructor-arg>
+</bean>
+<bean id="S005" class="com.assignment3.Student">
+<constructor-arg value="S005"></constructor-arg>
+<constructor-arg value="Bruce"></constructor-arg>
+<constructor-arg value="Florida"></constructor-arg>
+</bean>
+<bean id="S006" class="com.assignment3.Student">
+<constructor-arg value="S006"></constructor-arg>
+<constructor-arg value="Fury"></constructor-arg>
+<constructor-arg value="Alabama"></constructor-arg>
+</bean>
+<bean id="S007" class="com.assignment3.Student">
+<constructor-arg value="S007"></constructor-arg>
+<constructor-arg value="Banner"></constructor-arg>
+<constructor-arg value="Texas"></constructor-arg>
+</bean>
+<bean id="obj" class="com.assignment3.ListStudents">
+<constructor-arg>
+<list>
+<ref bean="S001"/>
+<ref bean="S002"/>
+<ref bean="S003"/>
+<ref bean="S004"/>
+<ref bean="S005"/>
+<ref bean="S006"/>
+<ref bean="S007"/>
+</list>
+</constructor-arg>
+</bean>  
+<bean id="ba" class="com.assignment3.AfterAdvisor"></bean>  
+  
+<bean id="proxy" class="org.springframework.aop.framework.ProxyFactoryBean">  
+<property name="target" ref="obj"></property>  
+<property name="interceptorNames">  
+<list>  
+<value>ba</value>  
+</list>  
+</property>  
+</bean>
+   
+</beans>  

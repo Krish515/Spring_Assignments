@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<beans  
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans   
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+<bean id="c1" class="com.java.A2players.Country">
+<constructor-arg value="C001"></constructor-arg>
+<constructor-arg value="India"></constructor-arg>
+</bean>
+<bean id="c2" class="com.java.A2players.Country">
+<constructor-arg value="C002"></constructor-arg>
+<constructor-arg value="Australia"></constructor-arg>
+</bean>
+<bean id="p1" class="com.java.A2players.Player">
+<constructor-arg value="P001"></constructor-arg>
+<constructor-arg value="Sachin"></constructor-arg>
+<constructor-arg>
+<ref bean="c1"/>
+</constructor-arg>
+</bean>
+<bean id="p2" class="com.java.A2players.Player">
+<constructor-arg value="P002"></constructor-arg>
+<constructor-arg value="Dhoni"></constructor-arg>
+<constructor-arg>
+<ref bean="c1"/>
+</constructor-arg>
+</bean>
+<bean id="p3" class="com.java.A2players.Player">
+<constructor-arg value="P003"></constructor-arg>
+<constructor-arg value="Kohli"></constructor-arg>
+<constructor-arg>
+<ref bean="c1"/>
+</constructor-arg>
+</bean>
+<bean id="p4" class="com.java.A2players.Player">
+<constructor-arg value="P004"></constructor-arg>
+<constructor-arg value="Ponting"></constructor-arg>
+<constructor-arg>
+<ref bean="c2"/>
+</constructor-arg>
+</bean>
+<bean id="p5" class="com.java.A2players.Player">
+<constructor-arg value="P005"></constructor-arg>
+<constructor-arg value="Clarke"></constructor-arg>
+<constructor-arg>
+<ref bean="c2"/>
+</constructor-arg>
+</bean>
+<bean id="p" class="com.java.A2players.Player">
+<constructor-arg><ref bean="p1"/></constructor-arg>
+<constructor-arg><ref bean="p2"/></constructor-arg>
+<constructor-arg><ref bean="p3"/></constructor-arg>
+<constructor-arg><ref bean="p4"/></constructor-arg>
+<constructor-arg><ref bean="p5"/></constructor-arg>
+</bean>
+
+</beans>  
